@@ -1,0 +1,70 @@
+<div id="exitPopup" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.8);z-index:10000;align-items:center;justify-content:center;"> 
+    <div style="background:white;padding:40px;border-radius:10px;max-width:500px;width:90%;position:relative;text-align:center;">
+        <button id="closePopup" style="position:absolute;top:15px;right:15px;background:none;border:none;font-size:28px;cursor:pointer;color:#999;line-height:1;">&times;</button>
+        
+        <h2 style="color:#0D5C3D;margin-bottom:15px;font-size:1.8rem;">Wait! Don't Go Yet</h2>
+        <p style="color:#333;margin-bottom:25px;font-size:1.1rem;">Get your <strong>FREE quote</strong> in 60 seconds</p>
+        
+        <form id="quickQuoteForm" action="/send.php" method="POST" style="text-align:left;">
+            <input type="text" name="_honeypot" style="display:none;" />
+            <input type="hidden" name="location" value="Exit Popup">
+            <input type="hidden" name="service" value="Quick Quote">
+            
+            <input type="text" name="name" placeholder="Your Name" required style="width:100%;padding:12px;margin-bottom:15px;border:2px solid #ddd;border-radius:5px;font-size:1rem;">
+            
+            <input type="tel" name="phone" placeholder="Phone Number" required pattern="[0-9\s+()-]+" style="width:100%;padding:12px;margin-bottom:15px;border:2px solid #ddd;border-radius:5px;font-size:1rem;">
+            
+            <input type="text" name="postcode" placeholder="Postcode (e.g. L8)" required style="width:100%;padding:12px;margin-bottom:20px;border:2px solid #ddd;border-radius:5px;font-size:1rem;">
+            
+            <label style="display:flex;align-items:flex-start;cursor:pointer;margin-bottom:20px;font-size:0.9rem;">
+                <input type="checkbox" name="privacy_agreed" required style="margin-right:8px;margin-top:2px;width:16px;height:16px;">
+                <span style="line-height:1.4;color:#555;">I agree to the Privacy Policy <span style="color:red;">*</span></span>
+            </label>
+            
+            <button type="submit" style="width:100%;background:#0D5C3D;color:white;padding:15px;border:none;border-radius:5px;font-size:1.1rem;font-weight:bold;cursor:pointer;transition:background 0.3s;">
+                Get My Free Quote
+            </button>
+        </form>
+        
+        <p style="color:#666;font-size:0.85rem;margin-top:15px;">We'll call you back within 2 hours</p>
+    </div>
+</div>
+
+<script>
+(function() {
+    var popup = document.getElementById('exitPopup');
+    var closeBtn = document.getElementById('closePopup');
+    var shown = false;
+    var submitted = sessionStorage.getItem('exitPopupSubmitted');
+    
+    if (submitted) return;
+    
+    document.addEventListener('mouseout', function(e) {
+        if (!shown && e.clientY < 10) {
+            popup.style.display = 'flex';
+            shown = true;
+        }
+    });
+    
+    if (closeBtn) {
+        closeBtn.addEventListener('click', function() {
+            popup.style.display = 'none';
+        });
+    }
+    
+    if (popup) {
+        popup.addEventListener('click', function(e) {
+            if (e.target === popup) {
+                popup.style.display = 'none';
+            }
+        });
+    }
+    
+    var form = document.getElementById('quickQuoteForm');
+    if (form) {
+        form.addEventListener('submit', function() {
+            sessionStorage.setItem('exitPopupSubmitted', 'true');
+        });
+    }
+})();
+</script>
