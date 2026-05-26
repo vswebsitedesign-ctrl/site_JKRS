@@ -12054,11 +12054,12 @@
     ],
     "base_html_status": "fixed (Jekyll tags removed, {{ content }} injected)",
     "assets_in_build": "unknown",
-    "last_build": "2026-05-25",
+    "last_build": "2026-05-26 \u2014 5915 pages built clean",
     "build_result": "SUCCESS",
     "jekyll_source": "/home/chubert/JKRS/_site",
     "live_crawl": "Crawled 2026-05-25: 0 added, 24 updated from https://houseclearancejkrs.co.uk",
-    "all_sites_built": true
+    "all_sites_built": true,
+    "deploy_status": "Deploying via GitHub Actions rsync to 217.154.45.205"
   },
   "audit": {
     "date": "2026-05-26",
@@ -12080,11 +12081,10 @@
       "phone_button_css_location": "assets/phone-button.css is in assets root, not assets/css/"
     },
     "next_steps": [
-      "1. Run build locally and verify",
-      "2. Commit all changes and push to main",
-      "3. Confirm GitHub Actions build-and-deploy runs green",
-      "4. Verify live site at houseclearancejkrs.co.uk",
-      "5. Delete .bak files from _includes/"
+      "1. Monitor GitHub Actions build-and-deploy run",
+      "2. Verify live site at houseclearancejkrs.co.uk",
+      "3. Delete .bak files from _includes/",
+      "4. Fix hero slug Jekyll tags in pages.json"
     ],
     "base_html_issues": {
       "location_finder_js": "MISSING \u2014 /assets/location-finder.js referenced in base.html but file does not exist. 404 on every page.",
@@ -12102,7 +12102,7 @@
       "location_finder_js_removed": "Removed missing location-finder.js script reference",
       "script_position": "No scripts remain \u2014 location-finder.js was only script, now removed",
       "build_py_updated": "build.py now replaces {{ title }}, {{ description }}, {{ slug }} alongside {{ content }}",
-      "spacer_div_removed": "FIXED 2026-05-26 \u2014 60px spacer div was hardcoded in body_content of 5880 pages and in base.html. Removed from both sources. Verified 0 remaining in pages.json and confirmed gone from build output."
+      "spacer_div_removed": "FIXED 2026-05-26 \u2014 60px spacer div removed from 5880 pages body_content and base.html. Verified 0 remaining."
     },
     "content_fixes": {
       "garden_garage_pricing_error": "FIXED 2026-05-26 \u2014 840 of 841 garden-garage-clearance location pages had commercial clearance pricing section. Replaced with correct garden and garage pricing (\u00a375-\u00a3150 / \u00a3150-\u00a3400 / \u00a3400-\u00a3700) across all affected pages in pages.json.",
