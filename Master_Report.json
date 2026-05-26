@@ -12119,6 +12119,13 @@
       "build_py_root_files": "FIXED 2026-05-26 \u2014 build.py updated to copy sitemap.xml, send.php and robots.txt from repo root to build root at build time. Previously landing in build/assets/ causing 404s.",
       "sitemap_send_php_moved_to_root": "FIXED 2026-05-26 \u2014 sitemap.xml and send.php moved from assets/ to repo root so build.py copies them to build root correctly.",
       "contact_page_form_rebuilt": "FIXED 2026-05-26 \u2014 contact page rebuilt with correct form matching send.php field names. Postcode placeholder e.g. L8. JS fetch submit with inline success/error response. Forms removed from all service location pages."
+    },
+    "outstanding_issues": {
+      "contact_page_form": "OUTSTANDING 2026-05-26 \u2014 contact page still showing wrong contact form. Needs replacing with correct form matching send.php field names, JKRS branding, postcode placeholder e.g. L8. Must be tested locally before deploy.",
+      "pricing_section_wrong": "OUTSTANDING 2026-05-26 \u2014 pricing section still showing wrong content on one or more service types. Must audit all service types locally, fix in pages.json, test locally before deploy.",
+      "nav_footer_stripped": "CAUSED 2026-05-26 \u2014 DOCTYPE strip operation incorrectly removed nav and footer from all 5915 pages body_content. Fixed by moving nav and footer permanently into base.html as single source of truth. Confirmed in build output.",
+      "contact_form_send_php_errors": "CAUSED 2026-05-26 \u2014 send.php honeypot field mismatch caused all contact form submissions to return please fill in all required fields. Fixed by correcting honeypot field name to _honeypot and making email optional to match form fields.",
+      "forms_on_location_pages": "CAUSED 2026-05-26 \u2014 contact forms were present on all service location pages. Removed from all pages in one pass. Verified 0 remaining."
     }
   }
 }
