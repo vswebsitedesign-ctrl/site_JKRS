@@ -12115,7 +12115,9 @@
       "doctype_stripped_from_body_content": "FIXED 2026-05-26 \u2014 5882 pages had full DOCTYPE and nav block baked into body_content. Stripped to inner content only. Verified 0 remaining.",
       "bak_files_deleted": "FIXED 2026-05-26 \u2014 deleted hero.html.bak and hero.html.bak.20260524-071834 from _includes/",
       "send_php_created": "ADDED 2026-05-26 \u2014 send.php created at assets/send.php. Handles contact form POST with honeypot, privacy check, sanitisation and mail() to john@houseclearancejkrs.co.uk. Redirects to /thank-you/ on success.",
-      "sitemap_generated": "ADDED 2026-05-26 \u2014 sitemap.xml generated from pages.json into assets/sitemap.xml and copied to build/ at build time."
+      "sitemap_generated": "ADDED 2026-05-26 \u2014 sitemap.xml generated from pages.json into assets/sitemap.xml and copied to build/ at build time.",
+      "build_py_root_files": "FIXED 2026-05-26 \u2014 build.py updated to copy sitemap.xml, send.php and robots.txt from repo root to build root at build time. Previously landing in build/assets/ causing 404s.",
+      "sitemap_send_php_moved_to_root": "FIXED 2026-05-26 \u2014 sitemap.xml and send.php moved from assets/ to repo root so build.py copies them to build root correctly."
     }
   }
 }
