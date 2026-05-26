@@ -28,6 +28,8 @@ def build():
     for fname in ["sitemap.xml", "send.php", "robots.txt"]:
         if os.path.exists(fname):
             shutil.copy(fname, os.path.join("build", fname))
+    if os.path.exists("vendor"):
+        shutil.copytree("vendor", "build/vendor", dirs_exist_ok=True)
     print(f"Built {len(pages)} pages")
 
 if __name__ == "__main__":
