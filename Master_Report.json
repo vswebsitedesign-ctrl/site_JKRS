@@ -6131,8 +6131,11 @@
     "git_initialized": true,
     "git_remote": "https://github.com/vswebsitedesign-ctrl/site_JKRS.git",
     "deploy_configured": true,
-    "deploy_method": "rsync over SSH to Plesk httpdocs",
-    "ssh_key": "jkrs_deploy \u2014 GitHub secret SSH_PRIVATE_KEY set"
+    "deploy_method": "GitHub Actions \u2014 rsync over SSH as Plesk domain user houseclearancejkrs.c_5xuo7rtjbju. Build runs in CI, output rsynced to /var/www/vhosts/houseclearancejkrs.co.uk/httpdocs/. SSH key: jkrs_user_deploy. Secret: SSH_PRIVATE_KEY.",
+    "ssh_key": "jkrs_deploy \u2014 GitHub secret SSH_PRIVATE_KEY set",
+    "server_ip": "217.154.45.205",
+    "deploy_status": "LIVE \u2014 confirmed working 2026-05-26",
+    "recommended_method": "GitHub Actions + rsync over SSH as Plesk domain system user (not root) \u2014 confirmed best practice 2026-05-26"
   },
   "content_status": {
     "pages_built": [
