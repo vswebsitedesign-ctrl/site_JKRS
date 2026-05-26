@@ -12122,7 +12122,7 @@
     },
     "outstanding_issues": {
       "contact_page_form": "OUTSTANDING 2026-05-26 \u2014 contact page still showing wrong contact form. Needs replacing with correct form matching send.php field names, JKRS branding, postcode placeholder e.g. L8. Must be tested locally before deploy.",
-      "pricing_section_wrong": "OUTSTANDING 2026-05-26 \u2014 pricing section still showing wrong content on one or more service types. Must audit all service types locally, fix in pages.json, test locally before deploy.",
+      "pricing_section_wrong": "RESOLVED 2026-05-26 \u2014 pricing sections audited across all 7 service types. All correct and service-specific. No changes required.",
       "nav_footer_stripped": "CAUSED 2026-05-26 \u2014 DOCTYPE strip operation incorrectly removed nav and footer from all 5915 pages body_content. Fixed by moving nav and footer permanently into base.html as single source of truth. Confirmed in build output.",
       "contact_form_send_php_errors": "CAUSED 2026-05-26 \u2014 send.php honeypot field mismatch caused all contact form submissions to return please fill in all required fields. Fixed by correcting honeypot field name to _honeypot and making email optional to match form fields.",
       "forms_on_location_pages": "CAUSED 2026-05-26 \u2014 contact forms were present on all service location pages. Removed from all pages in one pass. Verified 0 remaining."
