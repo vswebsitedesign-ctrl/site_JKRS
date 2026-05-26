@@ -27,7 +27,7 @@ $mail = new PHPMailer(true);
 try {
     $mail->isSMTP();
     $mail->Host       = SMTP_HOST;
-    $mail->SMTPAuth   = true;
+    $mail->SMTPAuth   = false;
     $mail->Username   = SMTP_USER;
     $mail->Password   = SMTP_PASS;
     $mail->SMTPSecure = SMTP_SECURE;
@@ -46,6 +46,7 @@ try {
         $mail->addReplyTo($email, $name);
     }
 
+    $mail->CharSet = 'UTF-8';
     $mail->Subject = 'New Enquiry – ' . $name . ' – ' . $postcode;
     $mail->Body    =
         "Name:     $name\n" .
