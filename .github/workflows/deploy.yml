@@ -5,6 +5,9 @@ on:
     branches: [ main ]
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
@@ -21,11 +24,13 @@ jobs:
       - name: Build site
         run: python3 build.py
 
-      - name: Deploy to deploy branch
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./build
-          publish_branch: deploy
-          force_orphan: false
-          commit_message: "Deploy: ${{ github.sha }}"
+      - name: Deploy to Plesk via rsync as domain user
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+        run: |
+          echo "$SSH_PRIVATE_KEY" > /tmp/deploy_key
+          chmod 600 /tmp/deploy_key
+          rsync -avz --delete \
+            -e "ssh -i /tmp/deploy_key -o StrictHostKeyChecking=no" \
+            build/ houseclearancejkrs.c_5xuo7rtjbju@217.154.45.205:/var/www/vhosts/houseclearancejkrs.co.uk/httpdocs/
+          rm /tmp/deploy_key
