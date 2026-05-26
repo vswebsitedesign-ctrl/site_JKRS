@@ -1,21 +1,17 @@
 <?php
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') { http_response_code(405); exit; }
-if (!empty($_POST['website'])) { http_response_code(200); exit; }
-if (empty($_POST['privacy_agreed'])) { http_response_code(400); echo 'Privacy policy must be accepted.'; exit; }
+if (!empty($_POST['_honeypot'])) { header('Location: /thank-you/'); exit; }
 
 $name     = htmlspecialchars(strip_tags(trim($_POST['name'] ?? '')));
 $phone    = htmlspecialchars(strip_tags(trim($_POST['phone'] ?? '')));
-$email    = filter_var(trim($_POST['email'] ?? ''), FILTER_SANITIZE_EMAIL);
+$email    = htmlspecialchars(strip_tags(trim($_POST['email'] ?? '')));
 $postcode = htmlspecialchars(strip_tags(trim($_POST['postcode'] ?? '')));
 $message  = htmlspecialchars(strip_tags(trim($_POST['message'] ?? '')));
 $location = htmlspecialchars(strip_tags(trim($_POST['location'] ?? '')));
 $service  = htmlspecialchars(strip_tags(trim($_POST['service'] ?? '')));
 
-if (empty($name) || empty($phone) || empty($email) || empty($message)) {
+if (empty($name) || empty($phone) || empty($postcode) || empty($message)) {
     http_response_code(400); echo 'Please fill in all required fields.'; exit;
-}
-if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    http_response_code(400); echo 'Invalid email address.'; exit;
 }
 
 $to      = 'john@houseclearancejkrs.co.uk';
