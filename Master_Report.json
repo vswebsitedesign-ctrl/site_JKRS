@@ -12106,7 +12106,8 @@
     },
     "content_fixes": {
       "garden_garage_pricing_error": "FIXED 2026-05-26 \u2014 840 of 841 garden-garage-clearance location pages had commercial clearance pricing section. Replaced with correct garden and garage pricing (\u00a375-\u00a3150 / \u00a3150-\u00a3400 / \u00a3400-\u00a3700) across all affected pages in pages.json.",
-      "garden_garage_commercial_content": "FIXED 2026-05-26 \u2014 all 840 garden-garage-clearance location pages had commercial clearance content in 4 locations: process heading, step description, clearance day copy, and service card. All replaced with correct garden and garage content in one pass. Verified 0 remaining."
+      "garden_garage_commercial_content": "FIXED 2026-05-26 \u2014 all 840 garden-garage-clearance location pages had commercial clearance content in 4 locations: process heading, step description, clearance day copy, and service card. All replaced with correct garden and garage content in one pass. Verified 0 remaining.",
+      "attic_clearance_wrong_content": "FIXED 2026-05-26 \u2014 all attic-clearance location pages had hoarder pricing, specialist process heading and commercial service card. All replaced with correct attic and loft content. Verified 0 remaining."
     }
   }
 }
