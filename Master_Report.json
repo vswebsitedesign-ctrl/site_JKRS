@@ -12110,7 +12110,12 @@
     "content_fixes": {
       "garden_garage_pricing_error": "FIXED 2026-05-26 \u2014 840 of 841 garden-garage-clearance location pages had commercial clearance pricing section. Replaced with correct garden and garage pricing (\u00a375-\u00a3150 / \u00a3150-\u00a3400 / \u00a3400-\u00a3700) across all affected pages in pages.json.",
       "garden_garage_commercial_content": "FIXED 2026-05-26 \u2014 all 840 garden-garage-clearance location pages had commercial clearance content in 4 locations: process heading, step description, clearance day copy, and service card. All replaced with correct garden and garage content in one pass. Verified 0 remaining.",
-      "attic_clearance_wrong_content": "FIXED 2026-05-26 \u2014 all attic-clearance location pages had hoarder pricing, specialist process heading and commercial service card. All replaced with correct attic and loft content. Verified 0 remaining."
+      "attic_clearance_wrong_content": "FIXED 2026-05-26 \u2014 all attic-clearance location pages had hoarder pricing, specialist process heading and commercial service card. All replaced with correct attic and loft content. Verified 0 remaining.",
+      "jekyll_tags_removed": "FIXED 2026-05-26 \u2014 schema-markup and location slugs had Jekyll template tags. Replaced with static content. Verified 0 remaining.",
+      "doctype_stripped_from_body_content": "FIXED 2026-05-26 \u2014 5882 pages had full DOCTYPE and nav block baked into body_content. Stripped to inner content only. Verified 0 remaining.",
+      "bak_files_deleted": "FIXED 2026-05-26 \u2014 deleted hero.html.bak and hero.html.bak.20260524-071834 from _includes/",
+      "send_php_created": "ADDED 2026-05-26 \u2014 send.php created at assets/send.php. Handles contact form POST with honeypot, privacy check, sanitisation and mail() to john@houseclearancejkrs.co.uk. Redirects to /thank-you/ on success.",
+      "sitemap_generated": "ADDED 2026-05-26 \u2014 sitemap.xml generated from pages.json into assets/sitemap.xml and copied to build/ at build time."
     }
   }
 }
