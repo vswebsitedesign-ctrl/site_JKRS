@@ -30,7 +30,7 @@ try {
     $mail->SMTPAuth   = true;
     $mail->Username   = SMTP_USER;
     $mail->Password   = SMTP_PASS;
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+    $mail->SMTPSecure = SMTP_SECURE;
     $mail->Port       = SMTP_PORT;
 
     $mail->setFrom(SMTP_FROM, 'JKRS House Clearance Website');
