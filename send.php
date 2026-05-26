@@ -32,6 +32,13 @@ try {
     $mail->Password   = SMTP_PASS;
     $mail->SMTPSecure = SMTP_SECURE;
     $mail->Port       = SMTP_PORT;
+    $mail->SMTPOptions = [
+        'ssl' => [
+            'verify_peer'       => false,
+            'verify_peer_name'  => false,
+            'allow_self_signed' => true,
+        ]
+    ];
 
     $mail->setFrom(SMTP_FROM, 'JKRS House Clearance Website');
     $mail->addAddress(SMTP_TO);
