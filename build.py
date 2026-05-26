@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import json, os, shutil, sys
+
 def build():
     pages_path = "data/pages.json"
     if not os.path.exists(pages_path):
@@ -24,6 +25,10 @@ def build():
             f.write(html)
     if os.path.exists("assets"):
         shutil.copytree("assets", "build/assets", dirs_exist_ok=True)
+    for fname in ["sitemap.xml", "send.php", "robots.txt"]:
+        if os.path.exists(fname):
+            shutil.copy(fname, os.path.join("build", fname))
     print(f"Built {len(pages)} pages")
+
 if __name__ == "__main__":
     build()
