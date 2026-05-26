@@ -12101,7 +12101,8 @@
       "style_css_added": "assets/css/style.css now linked in base.html",
       "location_finder_js_removed": "Removed missing location-finder.js script reference",
       "script_position": "No scripts remain \u2014 location-finder.js was only script, now removed",
-      "build_py_updated": "build.py now replaces {{ title }}, {{ description }}, {{ slug }} alongside {{ content }}"
+      "build_py_updated": "build.py now replaces {{ title }}, {{ description }}, {{ slug }} alongside {{ content }}",
+      "spacer_div_removed": "FIXED 2026-05-26 \u2014 60px spacer div was hardcoded in body_content of 5880 pages and in base.html. Removed from both sources. Verified 0 remaining in pages.json and confirmed gone from build output."
     },
     "content_fixes": {
       "garden_garage_pricing_error": "FIXED 2026-05-26 \u2014 840 of 841 garden-garage-clearance location pages had commercial clearance pricing section. Replaced with correct garden and garage pricing (\u00a375-\u00a3150 / \u00a3150-\u00a3400 / \u00a3400-\u00a3700) across all affected pages in pages.json.",
