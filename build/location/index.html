@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>location.html</title>
+    <meta name="description" content="">
+    <link rel="canonical" href="https://houseclearancejkrs.co.uk/location">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/phone-button.css">
+</head>
+<body data-service="">
+<main><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if page.title %}{{ page.title }} | JKRS House Clearance{% else %}JKRS House Clearance{% endif %}</title>
+    <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}Professional clearance services across Cheshire, Merseyside & Greater Manchester. Call 07931 476 744.{% endif %}">
+    <link rel="canonical" href="https://houseclearancejkrs.co.uk{{ page.url }}">
+    <link rel="stylesheet" href="/assets/phone-button.css">
+    <link rel="preload" as="image" href="/assets/images/John.webp" fetchpriority="high">
+    <style>
+        body{margin:0;font-family:sans-serif;background:#fff;color:#333}
+        .btn-call{background:#ffcc00;color:#002D62!important;padding:15px 25px;font-size:1.4rem;font-weight:bold;text-decoration:none;display:inline-block;border-radius:8px;text-align:center;box-shadow:0 4px 10px rgba(0,0,0,0.3)}
+        .quick-qa{background:#002D62;color:white;padding:30px 10%;text-align:center}
+        .qa-grid{display:flex;justify-content:center;gap:15px;margin-top:20px;flex-wrap:wrap}
+        .qa-card{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.2);border-radius:12px;padding:20px;flex:1;min-width:220px;max-width:320px}
+        .qa-card p{font-size:1.1rem;margin:0;font-weight:bold;line-height:1.4}
+        .qa-btn{background:#ffcc00;color:#002D62;display:inline-block;padding:8px 20px;border-radius:50px;font-weight:900;text-transform:uppercase;font-size:1.1rem;margin-bottom:15px}
+        .cta-top{background:#f4f4f4;padding:25px 10%;text-align:center;color:#002D62}
+        .trust-banner{background:#eee;padding:20px 5%;display:flex;align-items:center;justify-content:center;gap:20px;border-top:1px solid #ccc;border-bottom:1px solid #ccc}
+        .trust-col{width:250px;color:#002D62;font-weight:900;font-size:1.1rem;text-transform:uppercase;line-height:1.2}
+        .trust-center{flex:0 0 200px;text-align:center;color:#002D62}
+        .trust-center img{width:120px;height:auto;display:block;margin:0 auto 5px}
+        @media (max-width:768px){
+            .btn-call{width:100%;box-sizing:border-box}
+            .trust-banner{flex-direction:column;gap:25px;text-align:center;padding:30px 20px}
+            .trust-col{width:100%;text-align:center!important}
+        }
+    </style>
+    <link rel="stylesheet" href="/assets/css/main.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="/assets/css/main.css"></noscript>
+    {% include schema-markup.html %}
+</head>
+<body>
+    {% include sticky-header.html %}
+    <main>
+        {% include hero.html %}
+        {{ content }}
+    </main>
+    <div style="padding: 15px 10%; background: #f4f4f4; font-size: 0.95rem;">
+        <a href="/services/">All Services</a> → 
+        <a href="/services/{{ page.permalink | split: '/' | slice: 2 }}">{{ page.permalink | split: '/' | slice: 2 | replace: '-', ' ' | title }}</a> → 
+        <span style="color: #666;">{{ page.title | replace: ' | JKRS House Clearance', '' }}</span>
+    </div>
+    {% include footer.html %}
+    {% include cookie-banner.html %}
+    {% include exit-popup.html %}
+    {% include phone-button.html %}
+<script>
+(function() {
+    var texts = {{ site.data.clearance_results.texts | jsonify }};
+    var headings = {{ site.data.clearance_results.headings | jsonify }};
+    var headingEl = document.getElementById("result-heading");
+    var textEl = document.getElementById("result-text");
+    if (headingEl && textEl && texts && texts.length && headings && headings.length) {
+        var randomHeading = headings[Math.floor(Math.random() * headings.length)];
+        var randomText = texts[Math.floor(Math.random() * texts.length)];
+        headingEl.textContent = randomHeading;
+        textEl.textContent = randomText;
+    }
+})();
+</script>
+
+</body>
+</html>
+
+<script>
+(function() {
+    var texts = {{ site.data.clearance_results.texts | jsonify }};
+    var headings = {{ site.data.clearance_results.headings | jsonify }};
+    var headingEl = document.getElementById('result-heading');
+    var textEl = document.getElementById('result-text');
+    if (headingEl && textEl && texts && texts.length && headings && headings.length) {
+        var randomHeading = headings[Math.floor(Math.random() * headings.length)];
+        var randomText = texts[Math.floor(Math.random() * texts.length)];
+        headingEl.textContent = randomHeading;
+        textEl.textContent = randomText;
+    }
+})();
+</script></main>
+</body>
+</html>

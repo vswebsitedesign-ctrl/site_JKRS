@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cookie-banner.html</title>
+    <meta name="description" content="">
+    <link rel="canonical" href="https://houseclearancejkrs.co.uk/cookie-banner">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/phone-button.css">
+</head>
+<body data-service="">
+<main><div id="cookie-banner" style="display:none; position:fixed; bottom:0; left:0; right:0; background:#002D62; color:white; padding:15px 20px; z-index:9999; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px;">
+  <p style="margin:0; font-size:0.9rem;">We use cookies to improve your experience. By continuing to use this site you agree to our <a href="/cookie-policy/" style="color:#ffcc00;">Cookie Policy</a>.</p>
+  <button onclick="document.getElementById('cookie-banner').style.display='none'; localStorage.setItem('cookies_accepted','1');" style="background:#ffcc00; color:#002D62; border:none; padding:10px 20px; font-weight:bold; border-radius:4px; cursor:pointer; white-space:nowrap;">Accept Cookies</button>
+</div>
+<script>if(!localStorage.getItem('cookies_accepted')){document.getElementById('cookie-banner').style.display='flex';}</script></main>
+</body>
+</html>
