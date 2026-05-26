@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "last_updated": "2026-05-25",
+  "last_updated": "2026-05-26",
   "project_metadata": {
     "name": "JKRS House Clearance",
     "domain": "https://houseclearancejkrs.co.uk",
@@ -6079,6 +6079,14 @@
     {
       "date": "2026-05-25",
       "change": "Added GitHub Actions build-only workflow (no rsync). Created build.py and .gitattributes."
+    },
+    {
+      "date": "2026-05-25",
+      "change": "Initialized git repository locally, added .gitignore, created initial commit."
+    },
+    {
+      "date": "2026-05-25",
+      "change": "Pushed to GitHub: remote set to https://github.com/vswebsitedesign-ctrl/site_JKRS.git. GitHub Actions will now build on push."
     }
   ],
   "known_issues": {
@@ -6117,9 +6125,14 @@
     "domain": "houseclearancejkrs.co.uk",
     "plesk_path": "/var/www/vhosts/houseclearancejkrs.co.uk/httpdocs/",
     "deploy_user": "root",
-    "github_actions_status": "build-only workflow added (no Plesk)",
+    "github_actions_status": "build-and-deploy workflow \u2014 ready, runs on push to main",
     "workflow_file": ".github/workflows/deploy.yml",
-    "notes": "Deployment to Plesk not configured; artifact uploads build/"
+    "notes": "Deployment to Plesk not configured; artifact uploads build/",
+    "git_initialized": true,
+    "git_remote": "https://github.com/vswebsitedesign-ctrl/site_JKRS.git",
+    "deploy_configured": true,
+    "deploy_method": "rsync over SSH to Plesk httpdocs",
+    "ssh_key": "jkrs_deploy \u2014 GitHub secret SSH_PRIVATE_KEY set"
   },
   "content_status": {
     "pages_built": [
@@ -12046,5 +12059,53 @@
     "jekyll_source": "/home/chubert/JKRS/_site",
     "live_crawl": "Crawled 2026-05-25: 0 added, 24 updated from https://houseclearancejkrs.co.uk",
     "all_sites_built": true
+  },
+  "audit": {
+    "date": "2026-05-26",
+    "base_html_status": "CLEAN \u2014 only {{ content }} token present, no Jekyll tags",
+    "build_py": "EXISTS \u2014 executable, used correctly in GitHub Actions workflow",
+    "git_remote": "SET \u2014 https://github.com/vswebsitedesign-ctrl/site_JKRS.git",
+    "lfs_in_workflow": true,
+    "homepage_copy_in_build": true,
+    "assets_in_build": true,
+    "pages_json_records": 5915,
+    "issues": {
+      "github_actions_deploy": "Build-only workflow \u2014 no SSH deploy to Plesk 217.154.45.205 configured",
+      "master_report_uncommitted": "Master_Report.json has local changes not yet committed or pushed",
+      "stale_bak_files": [
+        "_includes/hero.html.bak",
+        "_includes/hero.html.bak.20260524-071834"
+      ],
+      "css_path_unconfirmed": "assets/css/main.css and assets/css/style.css both exist \u2014 base.html link not yet verified",
+      "phone_button_css_location": "assets/phone-button.css is in assets root, not assets/css/"
+    },
+    "next_steps": [
+      "1. Run build locally and verify",
+      "2. Commit all changes and push to main",
+      "3. Confirm GitHub Actions build-and-deploy runs green",
+      "4. Verify live site at houseclearancejkrs.co.uk",
+      "5. Delete .bak files from _includes/"
+    ],
+    "base_html_issues": {
+      "location_finder_js": "MISSING \u2014 /assets/location-finder.js referenced in base.html but file does not exist. 404 on every page.",
+      "script_outside_html": "script tag is placed after closing </html> tag \u2014 malformed HTML on every page",
+      "style_css_orphaned": "assets/css/style.css exists (mobile hero fix) but is not linked in base.html \u2014 mobile styles not loading",
+      "title_tag_broken": "Title tag has no page-specific token and duplicates site name \u2014 identical broken title on every page",
+      "canonical_hardcoded": "Canonical URL hardcoded to homepage \u2014 every page claims to be houseclearancejkrs.co.uk \u2014 SEO issue"
+    },
+    "base_html_fixes_applied": {
+      "date": "2026-05-26",
+      "title_token": "Added {{ title }} \u2014 uses pages.json title field",
+      "description_token": "Added {{ description }} \u2014 uses pages.json description field",
+      "canonical_token": "Added {{ slug }} to canonical URL \u2014 per-page canonical now correct",
+      "style_css_added": "assets/css/style.css now linked in base.html",
+      "location_finder_js_removed": "Removed missing location-finder.js script reference",
+      "script_position": "No scripts remain \u2014 location-finder.js was only script, now removed",
+      "build_py_updated": "build.py now replaces {{ title }}, {{ description }}, {{ slug }} alongside {{ content }}"
+    },
+    "content_fixes": {
+      "garden_garage_pricing_error": "FIXED 2026-05-26 \u2014 840 of 841 garden-garage-clearance location pages had commercial clearance pricing section. Replaced with correct garden and garage pricing (\u00a375-\u00a3150 / \u00a3150-\u00a3400 / \u00a3400-\u00a3700) across all affected pages in pages.json.",
+      "garden_garage_commercial_content": "FIXED 2026-05-26 \u2014 all 840 garden-garage-clearance location pages had commercial clearance content in 4 locations: process heading, step description, clearance day copy, and service card. All replaced with correct garden and garage content in one pass. Verified 0 remaining."
+    }
   }
 }
